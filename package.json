@@ -6,19 +6,47 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.0",
     "next": "12.3.0",
+    "notion-to-md": "^2.5.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.3",
+    "sass": "^1.54.9"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "18.7.16",
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.8",
+    "babel-loader": "^8.2.5",
+    "chromatic": "^6.9.0",
+    "css-loader": "^6.7.1",
     "eslint": "8.23.0",
     "eslint-config-next": "12.3.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
     "typescript": "4.8.3"
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "IE 11"
+  ]
 }

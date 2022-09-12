@@ -1,0 +1,19 @@
+@use "./size";
+
+@mixin HEADER {
+  font-size: size.$--text-lg;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+@mixin BODY1 {
+  font-size: size.$--text-md;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+@mixin BODY2 {
+  font-size: size.$--text-sm;
+  font-weight: 400;
+  line-height: 13px;
+}

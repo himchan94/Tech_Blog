@@ -1,7 +1,7 @@
 @use "../constant/size";
 
 @mixin tablet {
-  @media (min-width: size.$TABLET_BREAK) {
+  @media (max-width: size.$TABLET_BREAK) {
     @content;
   }
 }

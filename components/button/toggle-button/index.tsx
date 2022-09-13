@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface ToggleButtonProps {
   onImage: string | object;
@@ -31,9 +32,9 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
         }
       }}>
       {toggle ? (
-        <img src={offImage.src} style={offImageStyle} alt='toggle on image' />
+        <Image src={offImage} style={offImageStyle} alt='toggle on image' />
       ) : (
-        <img src={onImage.src} style={onImageStyle} alt='toggle off image' />
+        <Image src={onImage} style={onImageStyle} alt='toggle off image' />
       )}
     </div>
   );

@@ -1,0 +1,104 @@
+@use "../../styles/mixins/responsive" as responsive;
+@use "../../styles/mixins/typography" as typo;
+@use "../../styles/constant/colors" as color;
+@use "../../styles//constant/size" as size;
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-color: color.$MAIN1;
+  height: 56px;
+  font-family: Monument Extended;
+  color: color.$WHITE;
+  @include typo.BODY1;
+
+  &__logo {
+    position: absolute;
+    top: 13px;
+    left: 16px;
+    cursor: pointer;
+  }
+
+  &__hamburger {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: none;
+    cursor: pointer;
+  }
+
+  &__nav-container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+    margin-right: 110px;
+  }
+
+  &__wave-container {
+    display: none;
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 8px;
+    right: 30px;
+    display: flex;
+    height: 48px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+ .a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+ .a:hover,
+.a:active {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f59000;
+}
+
+@include responsive.tablet {
+  .header__hamburger {
+    display: block;
+  }
+
+  .header__nav-container {
+    display: none;
+  }
+
+  .header__nav-container--active {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    row-gap: 16px;
+    width: 100%;
+    height: 330px;
+    background-color: color.$MAIN1;
+    padding: 32px 23px 0 16px;
+  }
+
+  .header__wave-container {
+    position: absolute;
+    left: 0;
+    bottom: 114px;
+    width: 100%;
+    height: 35px;
+    display: block;
+  }
+
+  .header__toggle {
+    right: 60px;
+  }
+}

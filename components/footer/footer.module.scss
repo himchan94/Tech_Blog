@@ -1,0 +1,19 @@
+@use "../../styles/mixins/typography" as typo;
+@use "../../styles/constant/colors" as color;
+@use "../../styles//constant/size" as size;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Monument Extended;
+  color: color.$WHITE;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+  text-align: center;
+  height: 200px;
+  background-color: color.$MAIN1;
+  letter-spacing: 0.105em;
+  line-height: 10px;
+}

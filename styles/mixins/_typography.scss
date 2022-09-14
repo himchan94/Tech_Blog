@@ -1,4 +1,4 @@
-@use "../constant//size" as size;
+@use "../constant/size" as size;
 
 @mixin HEADER {
   font-size: size.$TEXT_LG;

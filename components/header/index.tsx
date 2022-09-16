@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
         })}>
         {CATEGORIES.map((category) => (
           <li key={category}>
-            <Link href={`/${category}`}>
+            <Link href={`/${category.toLowerCase()}`}>
               <a>{category}</a>
             </Link>
           </li>

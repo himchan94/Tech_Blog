@@ -1,0 +1,39 @@
+@use "../../../styles/constant/colors" as color;
+
+.project-card {
+  width: 253px;
+  height: 232px;
+  background-color: color.$BASIC_WHITE;
+  box-shadow: 8px 8px 6px -2px rgba(172, 181, 203, 0.08),
+    0px 2px 4px -2px rgba(24, 39, 75, 0.06);
+  border-radius: 4px;
+  padding: 5px 5px 0 5px;
+
+  &__img {
+    position: relative;
+    width: 242px;
+    height: 147px;
+  }
+
+  &__tag-container {
+    // width: 242px;
+    max-height: 39px;
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    overflow: auto;
+    white-space: nowrap;
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+
+  &__title {
+    font-family: Spoqa Han Sans Neo;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    color: #000;
+  }
+}

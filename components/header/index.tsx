@@ -26,7 +26,11 @@ const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <div className={cx(styles.header)}>
       <div className={cx(styles.header__logo)}>
-        <Image width={30} height={30} src={LogoDefault} alt='Logo' />
+        <Link href='/'>
+          <a>
+            <Image width={30} height={30} src={LogoDefault} alt='Logo' />
+          </a>
+        </Link>
       </div>
 
       <ul

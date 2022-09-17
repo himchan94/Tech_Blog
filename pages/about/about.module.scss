@@ -1,0 +1,97 @@
+.head-section {
+  position: relative;
+  height: 404px;
+
+  &__profile-image {
+    position: relative;
+    top: 324px;
+    left: 0;
+    right: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+  }
+}
+
+.info-section {
+  margin-top: 96px;
+  margin-bottom: 80px;
+  font-family: Spoqa Han Sans Neo;
+
+  &__icon-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.detail-section {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  max-width: 616px;
+
+  margin: auto;
+
+  &__article {
+    position: relative;
+    width: 100%;
+    margin-bottom: 67px;
+
+    .bold {
+      font-weight: 900;
+    }
+
+    .article__title {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: Monument Extended;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 20px;
+      letter-spacing: 0.04em;
+      text-align: left;
+    }
+
+    .article__desc {
+      font-family: Spoqa Han Sans Neo;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: 24px;
+      margin-left: 20px;
+    }
+
+    .tag-wrapper {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      margin-left: 20px;
+    }
+  }
+}

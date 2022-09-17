@@ -8163,6 +8163,11 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
+notion-page-to-html@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/notion-page-to-html/-/notion-page-to-html-1.2.0.tgz#ef5b9f237debc3913065d5f04194719a7d7694c5"
+  integrity sha512-AOWjFABQlN2R3i5hcj1b6QFk5ctINFrKiu1vUcUEyundvRSHxRYAIoPXTJ1gx7S4Yfdh+2NcwEm1119k9awEeA==
+
 notion-to-md@^2.5.5:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/notion-to-md/-/notion-to-md-2.5.5.tgz#b022cd9d6f01125762b85e26e0a41ae15410bd12"

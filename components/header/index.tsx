@@ -5,8 +5,8 @@ import ToggleButton from "../button/toggle-button";
 import Link from "next/link";
 import LogoDefault from "../../public/images/logo/UDD_Logo_default_mode.svg";
 import HamburgerDefault from "../../public/images/logo/Hamburger_default_mode.svg";
-import LighthouseOn from "../../public/images/button_icon/Lighthouse-on.svg";
 import LighthouseOff from "../../public/images/button_icon/Lighthouse-off.svg";
+import LighthouseOn from "../../public/images/button_icon/Lighthouse-on.svg";
 import HeaderWave from "../../public/images/wave/header_wave.svg";
 import styles from "./header.module.scss";
 
@@ -14,7 +14,7 @@ interface HeaderProps {
   isDarkmode: boolean;
 }
 
-const CATEGORIES = ["About", "Post", "Project", "Search"];
+const CATEGORIES = ["About", "Post", "Project"];
 
 const Header: React.FC<HeaderProps> = ({}) => {
   const [toggle, setToggle] = useState<boolean>(false);

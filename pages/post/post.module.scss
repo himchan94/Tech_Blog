@@ -1,0 +1,29 @@
+.page-title-section {
+  position: relative;
+  height: 83px;
+  max-width: 616px;
+  margin: 0 auto 24px auto;
+
+  .title-contianer {
+    position: absolute;
+    top: 24px;
+    width: 100%;
+  }
+
+  .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: Monument Extended;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-align: left;
+  }
+}
+
+.posts-section {
+  max-width: 616px;
+  margin: auto;
+}

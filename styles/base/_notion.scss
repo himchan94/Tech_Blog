@@ -1,10 +1,17 @@
 .nontion-container {
+  max-width: 800px;
+  padding: 0 16px 0 16px;
+  background-color: transparent;
   html {
     -webkit-print-color-adjust: exact;
   }
   * {
     box-sizing: border-box;
     -webkit-print-color-adjust: exact;
+  }
+
+  :is(span, p:first-child, h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child) {
+    margin-top: 0 !important;
   }
 
   html,

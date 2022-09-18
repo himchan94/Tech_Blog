@@ -392,6 +392,11 @@
     margin-bottom: 0.5em;
   }
 
+  p:has(img) {
+    display: flex;
+    justify-content: center;
+  }
+
   .image {
     border: none;
     margin: 1.5em 0;
@@ -435,6 +440,7 @@
     margin: 1em 0;
     padding-left: 1em;
     border-left: 3px solid rgb(55, 53, 47);
+    background-color: rgb(238, 238, 234);
   }
 
   .bookmark {

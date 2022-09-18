@@ -5,6 +5,9 @@ export default function Document() {
     <Html>
       <Head>
         <link
+          rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css'></link>
+        <link
           href='http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
           rel='stylesheet'
         />

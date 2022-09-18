@@ -93,11 +93,11 @@ export async function getStaticPaths() {
   // Because we are generating static paths, you will have to redeploy your site whenever
   // you make a change in Notion.
   const paths = projects.map((project) => {
-    return `/project/${project.slug}`;
+    return { params: { slug: project.slug } };
   });
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 }

@@ -1,3 +1,11 @@
 // Global styles
+@use "constant/colors" as color;
 @import "base/reset";
 @import "base/fonts";
+@import "base/notion";
+
+.content {
+  min-height: calc(100vh - 256px);
+  padding-bottom: 125px;
+  background-color: color.$WHITE;
+}

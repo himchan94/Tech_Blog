@@ -79,6 +79,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       markdown,
       information,
     },
+    revalidate: 10,
   };
 };
 

@@ -1,0 +1,61 @@
+@use "../../../styles/constant/colors" as color;
+
+.page-wrapper {
+  max-width: 768px;
+  margin: auto;
+}
+
+.page-header-section {
+  position: relative;
+  height: 110px;
+
+  .header-contianer {
+    position: absolute;
+    top: 24px;
+    width: 100%;
+  }
+
+  .page-title {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    font-family: Monument Extended;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-align: left;
+  }
+}
+
+.title {
+  padding-left: 16px;
+
+  font-family: Spoqa Han Sans Neo;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.time {
+  padding-left: 16px;
+  margin: 6px 0 16px 0;
+
+  font-family: Spoqa Han Sans Neo;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: color.$GRAY3;
+}
+
+.tag-container {
+  padding-left: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  gap: 5px;
+}

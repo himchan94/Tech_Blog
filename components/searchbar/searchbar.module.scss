@@ -1,0 +1,34 @@
+@use "../../styles/constant/colors" as color;
+
+.search-bar {
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 16px;
+  display: flex;
+  flex-flow: row nowrap;
+  background: red;
+
+  &__button,
+  &__input {
+    background-color: #ebecef;
+    border: none;
+    outline: none;
+  }
+
+  &__input {
+    padding: 16px;
+    width: 90%;
+  }
+
+  &__button {
+    width: 10%;
+    padding-right: 8px;
+    color: gray;
+    display: grid;
+    place-content: center;
+  }
+}
+
+.search-bar:focus-within {
+  box-shadow: 2px 2px 2px color.$GRAY3;
+}

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 interface ToggleButtonProps {
-  onImage: string | object;
+  onImage: any;
   onImageStyle?: object;
-  offImage: string | object;
+  offImage: any;
   offImageStyle?: object;
   _click?: () => void;
 }

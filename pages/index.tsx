@@ -1,17 +1,35 @@
+import React, { useState, memo } from "react";
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./main.module.scss";
-import ProjectCard from "../components/card/project";
 import NotionService from "../services/notion-service";
+import SearchBar from "../components/searchbar";
+import ProjectCard from "../components/card/project";
 import PostCard from "../components/card/post";
 
+import { Document } from "../@types/schema";
+
 const Home: NextPage = ({
-  projects,
-  posts,
+  projectList,
+  postList,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(posts);
-  console.log(projects);
+  const [posts, setPosts] = useState<Document[]>(postList);
+  const [searchResults, setSearchResults] = useState<Document[]>(postList);
+
+  // search handler
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === "") {
+      return setSearchResults(posts);
+    }
+
+    const result = posts.filter(
+      (post: Document) =>
+        post.title.includes(e.target.value) ||
+        post.title.toLowerCase().includes(e.target.value)
+    );
+    setSearchResults(result);
+  };
 
   return (
     <>
@@ -54,14 +72,17 @@ const Home: NextPage = ({
           </div>
         </div>
       </section>
-
+      {/* search section */}
+      <section className={styles["search"]}>
+        <SearchBar onChangeHandler={handleSearchChange} />
+      </section>
       {/* project list section */}
       <section className={styles.project}>
         <div className={styles["project__card-container"]}>
-          {projects.map((post: any) => {
-            const { title, tags, id, cover } = post;
+          {projectList.map((singleProject: Document) => {
+            const { title, tags, id, cover, slug } = singleProject;
             return (
-              <Link key={id} href='/project/[id]' as={`/project/${id}`}>
+              <Link key={id} href='/project/[slug]' as={`/project/${slug}`}>
                 <a>
                   <ProjectCard
                     key={id}
@@ -78,19 +99,22 @@ const Home: NextPage = ({
 
       {/* post list section */}
       <section className={styles.post}>
-        <div className={styles["post__post-container"]}>
-          {posts.map((post: any) => {
-            console.log(post);
-            const { title, id, description, tags } = post;
-            return (
-              <Link key={id} href='/post/[id]' as={`/post/${id}`}>
-                <a>
-                  <PostCard title={title} desc={description} tags={tags} />
-                </a>
-              </Link>
-            );
-          })}
-        </div>
+        {searchResults.length ? (
+          <div className={styles["post__post-container"]}>
+            {searchResults.map((singlePost: Document) => {
+              const { title, id, description, tags, slug } = singlePost;
+              return (
+                <Link key={id} href='/post/[slug]' as={`/post/${slug}`}>
+                  <a>
+                    <PostCard title={title} desc={description} tags={tags} />
+                  </a>
+                </Link>
+              );
+            })}
+          </div>
+        ) : (
+          <div>검색 결과가 없습니다.</div>
+        )}
       </section>
     </>
   );
@@ -100,14 +124,19 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const notionService = new NotionService();
-  const posts = await notionService.getPublishedBlogPosts();
+  const postList = await notionService.getDocuments(
+    process.env.NOTION_POST_DATABASE_ID
+  );
 
-  const projects = await notionService.getPublishedProjects();
+  const projectList = await notionService.getDocuments(
+    process.env.NOTION_PROJECT_DATABASE_ID
+  );
 
   return {
     props: {
-      posts,
-      projects,
+      postList,
+      projectList,
     },
+    revalidate: 10,
   };
 };

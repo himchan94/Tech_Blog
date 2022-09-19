@@ -8,11 +8,11 @@ export default function Document() {
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css'></link>
         <link
-          href='http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+          href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
           rel='stylesheet'
         />
         <link
-          href='http://fonts.cdnfonts.com/css/monument-extended'
+          href='https://fonts.cdnfonts.com/css/monument-extended'
           rel='stylesheet'
         />
       </Head>

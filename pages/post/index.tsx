@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +13,21 @@ const PostPage: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
+      <Head>
+        <title>Post</title>
+        <meta name='description' content={"개발자 김힘찬의 포스팅"} />
+        <meta name={"og:title"} title={"og:title"} content='Post' />
+        <meta
+          name={"og:description"}
+          title={"og:description"}
+          content={"개발자 김힘찬의 포스팅"}
+        />
+        <meta
+          name={"og:image"}
+          title={"og:image"}
+          content={"/images/profile/profile-img.jpeg"}
+        />
+      </Head>
       {/* upper section */}
       <section className={styles["page-title-section"]}>
         <div className={styles["title-contianer"]}>

@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Image from "next/image";
 import { NextPage } from "next";
 import styles from "./about.module.scss";
@@ -10,6 +11,21 @@ interface AboutProps {}
 const About: NextPage = ({}) => {
   return (
     <>
+      <Head>
+        <title>About</title>
+        <meta name='description' content={"개발자 김힘찬의 자기소개"} />
+        <meta name={"og:title"} title={"og:title"} content='About' />
+        <meta
+          name={"og:description"}
+          title={"og:description"}
+          content={"개발자 김힘찬의 자기소개"}
+        />
+        <meta
+          name={"og:image"}
+          title={"og:image"}
+          content={"/images/profile/profile-img.jpeg"}
+        />
+      </Head>
       {/* top section */}
       <section className={styles["head-section"]}>
         <Image

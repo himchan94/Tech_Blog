@@ -1,5 +1,6 @@
 import React, { useState, memo } from "react";
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./main.module.scss";
@@ -33,6 +34,28 @@ const Home: NextPage = ({
 
   return (
     <>
+      <Head>
+        <title>늦깍이 개발자 김힘찬의 개발 블로그</title>
+        <meta
+          name='description'
+          content={"프론트엔드 개발자 김힘찬의 테크 블로그 tech blog"}
+        />
+        <meta
+          name={"og:title"}
+          title={"og:title"}
+          content='늦깍이 개발자 김힘찬의 개발 블로그'
+        />
+        <meta
+          name={"og:description"}
+          title={"og:description"}
+          content={"프론트엔드 개발자 김힘찬의 테크 블로그 tech blog"}
+        />
+        <meta
+          name={"og:image"}
+          title={"og:image"}
+          content={"/images/profile/profile-img.jpeg"}
+        />
+      </Head>
       {/* information section */}
       <section className={styles.info}>
         <Image

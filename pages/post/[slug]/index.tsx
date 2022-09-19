@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Head from "next/head";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import ReactMarkdown from "react-markdown";
 import dayjs from "dayjs";
@@ -23,37 +24,58 @@ const PostDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
   markdown: string;
 }) => {
   return (
-    <div className={styles["page-wrapper"]}>
-      <section className={styles["page-header-section"]}>
-        <div className={styles["header-contianer"]}>
-          <Image
-            src={Wave}
-            layout='responsive'
-            objectFit='contain'
-            alt='header wave'
-          />
-          <h3 className={styles["page-title"]}>Post</h3>
+    <>
+      <Head>
+        <title>{information.title}</title>
+        <meta name='description' content={information.description} />
+        <meta
+          name={"og:title"}
+          title={"og:title"}
+          content={information.title}
+        />
+        <meta
+          name={"og:description"}
+          title={"og:description"}
+          content={information.description}
+        />
+        <meta
+          name={"og:image"}
+          title={"og:image"}
+          content={information.cover.url}
+        />
+      </Head>
+      <div className={styles["page-wrapper"]}>
+        <section className={styles["page-header-section"]}>
+          <div className={styles["header-contianer"]}>
+            <Image
+              src={Wave}
+              layout='responsive'
+              objectFit='contain'
+              alt='header wave'
+            />
+            <h3 className={styles["page-title"]}>Post</h3>
+          </div>
+        </section>
+        <h1 className={styles.title}>{information.title}</h1>
+        <div className={styles.time}>
+          {dayjs(information.date).format("YYYY-MM-DD A hh/mm ")}
         </div>
-      </section>
-      <h1 className={styles.title}>{information.title}</h1>
-      <div className={styles.time}>
-        {dayjs(information.date).format("YYYY-MM-DD A hh/mm ")}
-      </div>
-      <div className={styles["tag-container"]}>
-        {information.tags.map((tag) => {
-          const { name, color, id } = tag;
+        <div className={styles["tag-container"]}>
+          {information.tags.map((tag) => {
+            const { name, color, id } = tag;
 
-          return <Tag key={id} name={name} color={color} />;
-        })}
+            return <Tag key={id} name={name} color={color} />;
+          })}
+        </div>
+        <section className='nontion-container'>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeHighlight]}>
+            {markdown}
+          </ReactMarkdown>
+        </section>
       </div>
-      <section className='nontion-container'>
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeHighlight]}>
-          {markdown}
-        </ReactMarkdown>
-      </section>
-    </div>
+    </>
   );
 };
 

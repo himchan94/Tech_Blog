@@ -4,11 +4,15 @@ export type Tag = {
   name: string;
 };
 
+export type Cover = {
+  url: string;
+};
+
 export type Document = {
   id: string;
   url: string;
   slug: string;
-  cover: string;
+  cover: Cover;
   title: string;
   tags: Tag[];
   description: string;

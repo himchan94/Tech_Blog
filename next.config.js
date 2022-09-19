@@ -4,6 +4,8 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["s3.us-west-2.amazonaws.com"],
+    loader: "akamai",
+    path: "",
   },
   env: {
     BASE_URL: process.env.BASE_URL,

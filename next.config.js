@@ -7,9 +7,8 @@ const nextConfig = {
     loader: "akamai",
     path: "",
   },
-  env: {
-    BASE_URL: process.env.BASE_URL,
-  },
+  basePath: "/Tech_Blog",
+  assetPrefix: "/Tech_Blog",
 };
 
 module.exports = nextConfig;

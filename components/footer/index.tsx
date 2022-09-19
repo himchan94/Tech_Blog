@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import cx from "classnames";
+import ModeContext from "../../context/ModeContext";
+
 import styles from "./footer.module.scss";
 
-interface FooterProps {
-  isDarkmode: boolean;
-}
+const Footer: React.FC = ({}) => {
+  const { mode } = useContext(ModeContext);
 
-const Footer: React.FC<FooterProps> = ({}) => {
   return (
-    <footer className={styles.footer}>
+    <footer className={cx(styles.footer, { darkmode: mode })}>
       <span>
         © UDD All rights reserved <br /> Powered by
       </span>

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import cx from "classnames";
+import ModeContext from "../../context/ModeContext";
 import ToggleButton from "../button/toggle-button";
 import Link from "next/link";
 import LogoDefault from "../../public/images/logo/UDD_Logo_default_mode.svg";
@@ -10,21 +12,24 @@ import LighthouseOn from "../../public/images/button_icon/Lighthouse-on.svg";
 import HeaderWave from "../../public/images/wave/header_wave.svg";
 import styles from "./header.module.scss";
 
-interface HeaderProps {
-  isDarkmode: boolean;
-}
-
 const CATEGORIES = ["About", "Post", "Project"];
 
-const Header: React.FC<HeaderProps> = ({}) => {
+const Header: React.FC = ({}) => {
   const [toggle, setToggle] = useState<boolean>(false);
+  const { pathname } = useRouter();
+
+  const { mode, handleToggleMode } = useContext(ModeContext);
+
+  useEffect(() => {
+    setToggle(false);
+  }, [pathname]);
 
   const handleClick = () => {
     setToggle(!toggle);
   };
 
   return (
-    <div className={cx(styles.header)}>
+    <div className={cx(styles.header, { darkmode: mode })}>
       <div className={cx(styles.header__logo)}>
         <Link href='/'>
           <a>
@@ -34,9 +39,13 @@ const Header: React.FC<HeaderProps> = ({}) => {
       </div>
 
       <ul
-        className={cx(styles["header__nav-container"], {
-          [styles["header__nav-container--active"]]: toggle,
-        })}>
+        className={cx(
+          styles["header__nav-container"],
+          {
+            [styles["header__nav-container--active"]]: toggle,
+          },
+          { darkmode: mode }
+        )}>
         {CATEGORIES.map((category) => (
           <li key={category}>
             <Link href={`/${category.toLowerCase()}`}>
@@ -58,7 +67,11 @@ const Header: React.FC<HeaderProps> = ({}) => {
         <Image width={24} height={24} src={HamburgerDefault} alt='Hamburger' />
       </div>
       <div className={styles.header__toggle}>
-        <ToggleButton onImage={LighthouseOn} offImage={LighthouseOff} />
+        <ToggleButton
+          onImage={LighthouseOn}
+          offImage={LighthouseOff}
+          _click={handleToggleMode}
+        />
       </div>
     </div>
   );

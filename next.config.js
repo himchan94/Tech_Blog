@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ["s3.us-west-2.amazonaws.com"],
   },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
 };
 
 module.exports = nextConfig;

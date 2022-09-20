@@ -7,11 +7,11 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["s3.us-west-2.amazonaws.com"],
-    loader: "akamai",
-    path: "",
+    // loader: "akamai",
+    // path: "",
   },
-  basePath: "/Tech_Blog",
-  assetPrefix: "/Tech_Blog",
+  // basePath: "/Tech_Blog",
+  // assetPrefix: "/Tech_Blog",
 };
 
 module.exports = nextConfig;

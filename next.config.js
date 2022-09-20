@@ -12,14 +12,6 @@ const nextConfig = {
   },
   basePath: "/Tech_Blog",
   // assetPrefix: "/Tech_Blog",
-  webpack: async (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "../../public/images": path.resolve(__dirname, "/images"),
-    };
-
-    return config;
-  },
 };
 
 module.exports = nextConfig;

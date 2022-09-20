@@ -406,35 +406,35 @@
     text-align: center;
   }
 
-  // .code,
-  // code {
-  //   background: rgba(135, 131, 120, 0.15);
-  //   border-radius: 3px;
-  //   padding: 0.2em 0.4em;
-  //   border-radius: 3px;
-  //   font-size: 85%;
-  //   tab-size: 2;
-  // }
+  .code,
+  code {
+    background: rgba(135, 131, 120, 0.15);
+    border-radius: 3px;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 85%;
+    tab-size: 2;
+  }
 
-  // code {
-  //   color: #eb5757;
-  // }
+  code {
+    color: #eb5757;
+  }
 
-  // .code {
-  //   padding: 1.5em 1em;
-  // }
+  .code {
+    padding: 1.5em 1em;
+  }
 
-  // .code-wrap {
-  //   white-space: pre-wrap;
-  //   word-break: break-all;
-  // }
+  .code-wrap {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
 
-  // .code > code {
-  //   background: none;
-  //   padding: 0;
-  //   font-size: 100%;
-  //   color: inherit;
-  // }
+  .code > code {
+    background: none;
+    padding: 0;
+    font-size: 100%;
+    color: inherit;
+  }
 
   blockquote {
     font-size: 1.25em;

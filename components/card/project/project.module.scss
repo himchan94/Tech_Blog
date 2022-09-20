@@ -8,6 +8,8 @@
     0px 2px 4px -2px rgba(24, 39, 75, 0.06);
   border-radius: 4px;
   padding: 5px 5px 0 5px;
+  color: black;
+  transition: background-color 0.5s;
 
   &__img {
     position: relative;
@@ -34,6 +36,10 @@
     font-weight: 700;
     line-height: 20px;
     text-align: left;
-    color: #000;
   }
+}
+
+.darkmode {
+  background-color: color.$GRAY4;
+  color: color.$WHITE;
 }

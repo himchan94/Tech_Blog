@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames/bind";
 import Image from "next/image";
 import styles from "./project.module.scss";
 import Tag from "../../tag";
@@ -13,11 +14,19 @@ interface ProjectCardProps {
   title: string;
   tags: Tag[];
   cover: string;
+  isDarkMode: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, tags, cover }) => {
+const cx = classNames.bind(styles);
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  tags,
+  cover,
+  isDarkMode,
+}) => {
   return (
-    <article className={styles["project-card"]}>
+    <article className={cx("project-card", { darkmode: isDarkMode })}>
       <div className={styles["project-card__img"]}>
         <Image
           src={cover}

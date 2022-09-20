@@ -35,7 +35,7 @@ const Home: NextPage = ({
   return (
     <>
       <Head>
-        <title>늦깍이 개발자 김힘찬의 개발 블로그</title>
+        <title>김힘찬의 테크노트</title>
         <meta
           name='description'
           content={"프론트엔드 개발자 김힘찬의 테크 블로그 tech blog"}

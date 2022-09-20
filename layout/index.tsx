@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import cx from "classnames";
+import ModeContext from "../context/ModeContext";
 import styles from "./layout.module.scss";
 
 interface LayoutProps {
@@ -6,7 +8,11 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <div className={styles.layout}>{children}</div>;
+  const { mode } = useContext(ModeContext);
+
+  return (
+    <div className={cx(styles.layout, { darkmode: mode })}>{children}</div>
+  );
 };
 
 export default Layout;

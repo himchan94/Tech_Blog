@@ -1,6 +1,6 @@
 @use "../../../styles/constant/colors" as color;
-@use "../../../styles//mixins/typography" as typo;
-@use "../../../styles//mixins/responsive" as responsive;
+@use "../../../styles/mixins/typography" as typo;
+@use "../../../styles/mixins/responsive" as responsive;
 
 .post-card {
   width: 100%;
@@ -9,6 +9,7 @@
   background-color: color.$BASIC_WHITE;
   border-bottom: solid #e0e0e0 1px;
   color: black;
+  transition: background-color 0.5s;
 
   &__tag-container {
     max-height: 39px;
@@ -48,6 +49,11 @@
     word-wrap: break-word;
     height: 45px;
   }
+}
+
+.darkmode {
+  background-color: color.$GRAY4;
+  color: color.$WHITE;
 }
 
 @include responsive.tablet {

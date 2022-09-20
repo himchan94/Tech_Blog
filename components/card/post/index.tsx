@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames/bind";
 import styles from "./post.module.scss";
 import Tag from "../../tag";
 
@@ -12,11 +13,18 @@ interface PostCardProps {
   title: string;
   desc: string;
   tags: Tag[];
+  isDarkMode: boolean;
 }
+const cx = classNames.bind(styles);
 
-const PostCard: React.FC<PostCardProps> = ({ title, desc, tags }) => {
+const PostCard: React.FC<PostCardProps> = ({
+  title,
+  desc,
+  tags,
+  isDarkMode,
+}) => {
   return (
-    <article className={styles["post-card"]}>
+    <article className={cx(styles["post-card"], { darkmode: isDarkMode })}>
       <div className={styles["post-card__tag-container"]}>
         {tags.map((tag) => {
           const { name, color, id } = tag;

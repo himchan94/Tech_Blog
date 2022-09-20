@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import ModeContext from "../../context/ModeContext";
 import NotionService from "../../services/notion-service";
 import styles from "./project.module.scss";
 import Wave from "../../public/images/wave/category-wave.svg";
@@ -11,6 +12,8 @@ import ProjectCard from "../../components/card/project";
 const ProjectPage: NextPage = ({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { mode } = useContext(ModeContext);
+
   return (
     <>
       <Head>
@@ -49,7 +52,12 @@ const ProjectPage: NextPage = ({
             return (
               <Link key={id} href='/project/[slug]' as={`/project/${slug}`}>
                 <a>
-                  <ProjectCard title={title} cover={cover.url} tags={tags} />
+                  <ProjectCard
+                    title={title}
+                    cover={cover.url}
+                    tags={tags}
+                    isDarkMode={mode}
+                  />
                 </a>
               </Link>
             );

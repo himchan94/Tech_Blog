@@ -1,4 +1,5 @@
-import React, { useState, memo } from "react";
+import React, { useState, useContext } from "react";
+import ModeContext from "../context/ModeContext";
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -17,6 +18,9 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [posts, setPosts] = useState<Document[]>(postList);
   const [searchResults, setSearchResults] = useState<Document[]>(postList);
+
+  // darkmode context
+  const { mode } = useContext(ModeContext);
 
   // search handler
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,6 +116,7 @@ const Home: NextPage = ({
                     title={title}
                     tags={tags}
                     cover={cover.url}
+                    isDarkMode={mode}
                   />
                 </a>
               </Link>
@@ -129,7 +134,12 @@ const Home: NextPage = ({
               return (
                 <Link key={id} href='/post/[slug]' as={`/post/${slug}`}>
                   <a>
-                    <PostCard title={title} desc={description} tags={tags} />
+                    <PostCard
+                      title={title}
+                      desc={description}
+                      tags={tags}
+                      isDarkMode={mode}
+                    />
                   </a>
                 </Link>
               );

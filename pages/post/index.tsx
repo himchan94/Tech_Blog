@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Head from "next/head";
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import ModeContext from "../../context/ModeContext";
 import NotionService from "../../services/notion-service";
 import styles from "./post.module.scss";
 import Wave from "../../public/images/wave/category-wave.svg";
@@ -11,6 +12,8 @@ import PostCard from "../../components/card/post";
 const PostPage: NextPage = ({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { mode } = useContext(ModeContext);
+
   return (
     <>
       <Head>
@@ -48,7 +51,12 @@ const PostPage: NextPage = ({
           return (
             <Link key={id} href='/post/[slug]' as={`/post/${slug}`}>
               <a>
-                <PostCard title={title} desc={description} tags={tags} />
+                <PostCard
+                  title={title}
+                  desc={description}
+                  tags={tags}
+                  isDarkMode={mode}
+                />
               </a>
             </Link>
           );

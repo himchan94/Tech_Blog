@@ -8,8 +8,15 @@
   min-height: calc(100vh - 256px);
   padding-bottom: 125px;
   background-color: color.$WHITE;
+  transition: background-color 0.5s;
 }
 
 .darkmode {
-  background-color: #041516;
+  color: white;
+  background-color: color.$BLACK;
+
+  // container with darkmode
+  .content {
+    background-color: rgb(40, 40, 44);
+  }
 }

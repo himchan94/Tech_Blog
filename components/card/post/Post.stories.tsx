@@ -32,6 +32,7 @@ Default.args = {
       color: "brown",
     },
   ],
+  isDarkMode: false,
 };
 
 // export const LoggedOut = Template.bind({});

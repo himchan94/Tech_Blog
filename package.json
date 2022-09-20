@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "sh script/generate-sitemap.sh && next build",
     "start": "next start",
     "export": "next export",
     "lint": "next lint",

@@ -7,7 +7,12 @@
 - Storybook을 통한 컴포넌트 라이브러리화
 - SEO 향상
 
+## 디자인 컨셉  
+  <img width="700" height="500" alt="image" src="https://user-images.githubusercontent.com/71649055/191732355-96ad09c1-5c7a-417f-96ef-e742cb4770c1.png">
+
+
 # 2. Stack
+
 ## UX/UI
 - Figma
 

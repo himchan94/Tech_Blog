@@ -1,5 +1,11 @@
 import React, { useContext } from "react";
-import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
+import {
+  NextPage,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+} from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,7 +17,7 @@ import ProjectCard from "../../components/card/project";
 
 const ProjectPage: NextPage = ({
   projects,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const { mode } = useContext(ModeContext);
 
   return (
@@ -70,7 +76,7 @@ const ProjectPage: NextPage = ({
 
 export default ProjectPage;
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const notionService = new NotionService();
   const projects = await notionService.getDocuments(
     process.env.NOTION_PROJECT_DATABASE_ID
@@ -80,6 +86,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       projects,
     },
-    revalidate: 10,
   };
 };

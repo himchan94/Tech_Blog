@@ -41,7 +41,7 @@ const PostDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
         <meta
           name={"og:image"}
           title={"og:image"}
-          content={information.cover.url}
+          content={information.cover}
         />
       </Head>
       <div className={styles["page-wrapper"]}>

@@ -115,7 +115,7 @@ const Home: NextPage = ({
                     key={id}
                     title={title}
                     tags={tags}
-                    cover={cover.url}
+                    cover={cover}
                     isDarkMode={mode}
                   />
                 </a>

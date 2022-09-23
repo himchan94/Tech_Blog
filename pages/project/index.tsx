@@ -17,7 +17,7 @@ import ProjectCard from "../../components/card/project";
 
 const ProjectPage: NextPage = ({
   projects,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { mode } = useContext(ModeContext);
 
   return (
@@ -55,12 +55,13 @@ const ProjectPage: NextPage = ({
         <div className={styles["projects-section__inner-container"]}>
           {projects.map((project: any) => {
             const { title, id, cover, tags, slug } = project;
+
             return (
               <Link key={id} href='/project/[slug]' as={`/project/${slug}`}>
                 <a>
                   <ProjectCard
                     title={title}
-                    cover={cover.url}
+                    cover={cover}
                     tags={tags}
                     isDarkMode={mode}
                   />
@@ -76,7 +77,7 @@ const ProjectPage: NextPage = ({
 
 export default ProjectPage;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const notionService = new NotionService();
   const projects = await notionService.getDocuments(
     process.env.NOTION_PROJECT_DATABASE_ID
@@ -86,5 +87,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       projects,
     },
+    revalidate: 10,
   };
 };

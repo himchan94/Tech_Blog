@@ -130,14 +130,14 @@ export default class NotionService {
     let cover = page.cover;
     switch (cover.type) {
       case "file":
-        cover = page.cover.file;
+        cover = page.cover.file.url;
         break;
       case "external":
         cover = page.cover.external.url;
         break;
       default:
         // Add default cover image if you want...
-        cover = "";
+        cover = "/images/bg/about-bg.jpeg";
     }
     return {
       id: page.id,

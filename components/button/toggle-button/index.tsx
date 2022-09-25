@@ -24,13 +24,15 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
 
   return (
     <div
+      className='toggle-button'
       onClick={() => {
         handleToggleState();
 
         if (_click) {
           _click();
         }
-      }}>
+      }}
+    >
       {toggle ? (
         <Image src={offImage} style={offImageStyle} alt='toggle on image' />
       ) : (

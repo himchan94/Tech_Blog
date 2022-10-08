@@ -11,6 +11,19 @@ export default class NotionService {
       auth: process.env.NOTION_ACCESS_TOKEN,
     });
     this.n2m = new NotionToMarkdown({ notionClient: this.client });
+
+    // n2m CustomTransformer for codesandbox iframe
+    this.n2m.setCustomTransformer("embed", async (block) => {
+      const { embed } = block as any;
+      if (!embed?.url) return "";
+
+      return `<iframe src=${embed.url}
+              style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+              title="dry-monad-dlucju"
+              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+            ></iframe>`;
+    });
   }
 
   async getDocuments(
@@ -120,6 +133,7 @@ export default class NotionService {
 
     markdown = this.n2m.toMarkdownString(mdBlocks);
     documentDetail = NotionService.documentFormatter(document);
+
     return {
       information: documentDetail,
       markdown,

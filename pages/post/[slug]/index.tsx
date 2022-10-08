@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import dayjs from "dayjs";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import Tag from "../../../components/tag";
 import NotionService from "../../../services/notion-service";
 import Wave from "../../../public/images/wave/category-wave.svg";
@@ -70,7 +71,8 @@ const PostDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
         <section className='nontion-container'>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}>
+            rehypePlugins={[rehypeHighlight, rehypeRaw]}
+          >
             {markdown}
           </ReactMarkdown>
         </section>

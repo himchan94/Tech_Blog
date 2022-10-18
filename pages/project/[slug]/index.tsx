@@ -53,7 +53,7 @@ const ProjectDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
               objectFit='contain'
               alt='header wave'
             />
-            <h3 className={styles["page-title"]}>Post</h3>
+            <h3 className={styles["page-title"]}>Project</h3>
           </div>
         </section>
         <h1 className={styles.title}>{information.title}</h1>
@@ -70,7 +70,8 @@ const ProjectDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
         <section className='nontion-container'>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}>
+            rehypePlugins={[rehypeHighlight]}
+          >
             {markdown}
           </ReactMarkdown>
         </section>

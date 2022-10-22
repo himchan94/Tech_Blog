@@ -3,6 +3,7 @@
   max-width: 800px;
   padding: 0 16px 0 16px;
   background-color: transparent;
+  font-family: GmarketSansMedium;
 
   * {
     box-sizing: border-box;
@@ -398,10 +399,10 @@
     border-radius: 3px;
     padding: 0.2em 0.4em;
     border-radius: 3px;
-
     tab-size: 2;
     margin: 16px 0 16px 0;
     background-color: rgb(16, 18, 23);
+    font-family: Oswald;
   }
 
   code {
@@ -430,7 +431,6 @@
     padding-left: 1em;
     border-left: 3px solid rgb(55, 53, 47);
     background-color: rgb(238, 238, 234);
-    font-family: Oswald;
   }
 
   .bookmark {

@@ -12,7 +12,7 @@ import LighthouseOn from "../../public/images/button_icon/Lighthouse-on.svg";
 import HeaderWave from "../../public/images/wave/header_wave.svg";
 import styles from "./header.module.scss";
 
-const CATEGORIES = ["About", "Post", "Project"];
+const CATEGORIES = ["About", "Post", "Project", "Playground"];
 
 const Header: React.FC = ({}) => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -45,7 +45,8 @@ const Header: React.FC = ({}) => {
             [styles["header__nav-container--active"]]: toggle,
           },
           { darkmode: mode }
-        )}>
+        )}
+      >
         {CATEGORIES.map((category) => (
           <li key={category}>
             <Link href={`/${category.toLowerCase()}`}>

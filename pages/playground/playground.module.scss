@@ -1,0 +1,42 @@
+.page-title-section {
+  position: relative;
+  height: 83px;
+  max-width: 616px;
+  margin: 0 auto 24px auto;
+
+  .title-contianer {
+    position: absolute;
+    top: 24px;
+    width: 100%;
+  }
+
+  .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: Oswald, Monument Extended, Spoqa Han Sans Neo;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-align: left;
+  }
+}
+
+.playground-section {
+  max-width: 556px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  &__inner-container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    @media (max-width: 556px) {
+      justify-content: center;
+    }
+  }
+}

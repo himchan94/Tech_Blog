@@ -13,6 +13,7 @@ const nextConfig = {
     domains: [
       "s3.us-west-2.amazonaws.com",
       "user-images.githubusercontent.com",
+      "drive.google.com",
     ],
     // loader: "akamai",
     // path: "",

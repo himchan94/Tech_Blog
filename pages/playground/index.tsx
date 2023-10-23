@@ -19,13 +19,12 @@ const projects = [
   {
     title: "planets",
     id: "planets-10/23",
-    cover:
-      "http://drive.google.com/uc?export=view&id=1C7Um0VpDa4N026N4__3kwYGUpXXJkJKP",
     tags: [
       { name: "우주", color: "green" },
       { name: "cloned", color: "purple" },
     ],
     slug: "planets",
+    alternativeText: "우주다",
   },
 ];
 
@@ -66,7 +65,7 @@ const ProjectPage: NextPage = () => {
       <section className={styles["playground-section"]}>
         <div className={styles["playground-section__inner-container"]}>
           {projects.map((project: any) => {
-            const { title, id, cover, tags, slug } = project;
+            const { title, id, cover, tags, slug, ...rest } = project;
 
             return (
               <Link
@@ -78,6 +77,7 @@ const ProjectPage: NextPage = () => {
                   cover={cover}
                   tags={tags}
                   isDarkMode={mode}
+                  {...rest}
                 />
               </Link>
             );

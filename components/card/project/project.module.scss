@@ -37,6 +37,17 @@
     line-height: 20px;
     text-align: left;
   }
+
+  &__alternative-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: Spoqa Han Sans Neo;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+  }
 }
 
 .darkmode {

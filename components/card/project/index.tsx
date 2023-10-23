@@ -15,6 +15,7 @@ interface ProjectCardProps {
   tags: Tag[];
   cover: string;
   isDarkMode: boolean;
+  alternativeText?: string;
 }
 
 const cx = classNames.bind(styles);
@@ -24,16 +25,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   tags,
   cover,
   isDarkMode,
+  alternativeText,
 }) => {
   return (
     <article className={cx("project-card", { darkmode: isDarkMode })}>
       <div className={styles["project-card__img"]}>
-        <Image
-          src={cover}
-          layout='fill'
-          alt='project image'
-          objectFit='cover'
-        />
+        {cover ? (
+          <Image
+            src={cover}
+            layout='fill'
+            alt='project image'
+            objectFit='cover'
+          />
+        ) : (
+          <div className={styles["project-card__alternative-text"]}>
+            {alternativeText}
+          </div>
+        )}
       </div>
       <div className={styles["project-card__tag-container"]}>
         {tags.map((tag) => {

@@ -70,8 +70,7 @@ const ProjectDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
         <section className='nontion-container'>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}
-          >
+            rehypePlugins={[rehypeHighlight]}>
             {markdown}
           </ReactMarkdown>
         </section>

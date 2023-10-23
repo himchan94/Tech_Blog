@@ -32,9 +32,7 @@ const Header: React.FC = ({}) => {
     <div className={cx(styles.header, { darkmode: mode })}>
       <div className={cx(styles.header__logo)}>
         <Link href='/'>
-          <a>
-            <Image width={30} height={30} src={LogoDefault} alt='Logo' />
-          </a>
+          <Image width={30} height={30} src={LogoDefault} alt='Logo' />
         </Link>
       </div>
 
@@ -45,13 +43,10 @@ const Header: React.FC = ({}) => {
             [styles["header__nav-container--active"]]: toggle,
           },
           { darkmode: mode }
-        )}
-      >
+        )}>
         {CATEGORIES.map((category) => (
           <li key={category}>
-            <Link href={`/${category.toLowerCase()}`}>
-              <a>{category}</a>
-            </Link>
+            <Link href={`/${category.toLowerCase()}`}>{category}</Link>
           </li>
         ))}
         <div className={styles["header__wave-container"]}>

@@ -50,14 +50,12 @@ const PostPage: NextPage = ({
           const { title, id, description, tags, slug } = post;
           return (
             <Link key={id} href='/post/[slug]' as={`/post/${slug}`}>
-              <a>
-                <PostCard
-                  title={title}
-                  desc={description}
-                  tags={tags}
-                  isDarkMode={mode}
-                />
-              </a>
+              <PostCard
+                title={title}
+                desc={description}
+                tags={tags}
+                isDarkMode={mode}
+              />
             </Link>
           );
         })}

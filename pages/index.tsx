@@ -71,25 +71,23 @@ const Home: NextPage = ({
         <div className={styles["info__inner-wrapper"]}>
           <div className={styles["info__profile-container"]}>
             <Link href='/about'>
-              <a>
-                <div className={styles["info__profile-img"]}>
-                  <Image
-                    src='/images/profile/profile-img.jpeg'
-                    alt='profile img'
-                    layout='fill'
-                    objectFit='cover'
-                    objectPosition='center'
-                  />
-                </div>
-                <div className={styles["info__arrow"]}>
-                  <Image
-                    src='/images/profile/arrow.svg'
-                    width={72}
-                    height={19}
-                    alt='arrow'
-                  />
-                </div>
-              </a>
+              <div className={styles["info__profile-img"]}>
+                <Image
+                  src='/images/profile/profile-img.jpeg'
+                  alt='profile img'
+                  layout='fill'
+                  objectFit='cover'
+                  objectPosition='center'
+                />
+              </div>
+              <div className={styles["info__arrow"]}>
+                <Image
+                  src='/images/profile/arrow.svg'
+                  width={72}
+                  height={19}
+                  alt='arrow'
+                />
+              </div>
             </Link>
           </div>
 
@@ -110,15 +108,13 @@ const Home: NextPage = ({
             const { title, tags, id, cover, slug } = singleProject;
             return (
               <Link key={id} href='/project/[slug]' as={`/project/${slug}`}>
-                <a>
-                  <ProjectCard
-                    key={id}
-                    title={title}
-                    tags={tags}
-                    cover={cover}
-                    isDarkMode={mode}
-                  />
-                </a>
+                <ProjectCard
+                  key={id}
+                  title={title}
+                  tags={tags}
+                  cover={cover}
+                  isDarkMode={mode}
+                />
               </Link>
             );
           })}
@@ -133,14 +129,12 @@ const Home: NextPage = ({
               const { title, id, description, tags, slug } = singlePost;
               return (
                 <Link key={id} href='/post/[slug]' as={`/post/${slug}`}>
-                  <a>
-                    <PostCard
-                      title={title}
-                      desc={description}
-                      tags={tags}
-                      isDarkMode={mode}
-                    />
-                  </a>
+                  <PostCard
+                    title={title}
+                    desc={description}
+                    tags={tags}
+                    isDarkMode={mode}
+                  />
                 </Link>
               );
             })}

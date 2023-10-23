@@ -98,7 +98,7 @@ export default class NotionService {
     db_id: string | undefined,
     slug: any
   ): Promise<DocumentDetail> {
-    let documentDetail, markdown;
+    let documentDetail: Document, markdown: Record<string, string>;
 
     // make string type only
     const database = db_id ?? "";
@@ -136,7 +136,7 @@ export default class NotionService {
 
     return {
       information: documentDetail,
-      markdown,
+      markdown: markdown?.parent,
     };
   }
 

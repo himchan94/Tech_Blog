@@ -58,14 +58,12 @@ const ProjectPage: NextPage = ({
 
             return (
               <Link key={id} href='/project/[slug]' as={`/project/${slug}`}>
-                <a>
-                  <ProjectCard
-                    title={title}
-                    cover={cover}
-                    tags={tags}
-                    isDarkMode={mode}
-                  />
-                </a>
+                <ProjectCard
+                  title={title}
+                  cover={cover}
+                  tags={tags}
+                  isDarkMode={mode}
+                />
               </Link>
             );
           })}

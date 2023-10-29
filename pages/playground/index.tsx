@@ -26,6 +26,16 @@ const projects = [
     slug: "planets",
     alternativeText: "우주다",
   },
+  {
+    title: "worm",
+    id: "worm-10/29",
+    tags: [
+      { name: "worm", color: "green" },
+      { name: "cloned", color: "purple" },
+    ],
+    slug: "worm",
+    alternativeText: "지렁이다",
+  },
 ];
 
 const ProjectPage: NextPage = () => {

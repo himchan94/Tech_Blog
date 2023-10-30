@@ -11,7 +11,9 @@ import cx from "classnames";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isPlaygroundPage = router.pathname.includes("playground");
+  const pathname = router.pathname;
+  const isPlaygroundPage =
+    pathname.includes("playground") && pathname.split("/")?.length === 3;
 
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "";
 

@@ -6,8 +6,13 @@ import Footer from "../components/footer";
 import Layout from "../layout";
 import ModeProvider from "../hoc/ModeProvider";
 import "../styles/index.scss";
+import { useRouter } from "next/router";
+import cx from "classnames";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isPlaygroundPage = router.pathname.includes("playground");
+
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "";
 
   const tagManagerArgs: TagManagerArgs = {
@@ -22,7 +27,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ModeProvider>
       <Layout>
         <Header />
-        <main className='content'>
+        <main
+          className={cx(isPlaygroundPage ? "playground-content" : "content")}>
           <Component {...pageProps} />
         </main>
         <Footer />

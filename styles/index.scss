@@ -11,6 +11,11 @@
   transition: background-color 0.5s;
 }
 
+.playground-content {
+  background-color: color.$WHITE;
+  transition: background-color 0.5s;
+}
+
 .darkmode {
   color: white;
   background-color: color.$BLACK;

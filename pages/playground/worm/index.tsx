@@ -3,8 +3,6 @@ import cx from "classnames";
 import { NextPage } from "next";
 import styles from "./worm.module.scss";
 
-interface PlanetPageProps {}
-
 const WormPage: NextPage = ({}) => {
   const gameBoardRef = useRef<HTMLCanvasElement>(null);
   const scoreTextRef = useRef<HTMLDivElement>(null);
@@ -44,6 +42,7 @@ const WormPage: NextPage = ({}) => {
 
       gameStart();
 
+      // @ts-ignore
       function gameStart() {
         if (!scoreTextRef.current) return;
 
@@ -53,6 +52,8 @@ const WormPage: NextPage = ({}) => {
         drawFood();
         nextTick();
       }
+
+      // @ts-ignore
       function nextTick(): void {
         if (running) {
           setTimeout(() => {
@@ -67,13 +68,17 @@ const WormPage: NextPage = ({}) => {
           displayGameOver();
         }
       }
+
+      // @ts-ignore
       function clearBoard() {
         if (!ctx) return;
         ctx.fillStyle = boardBackground;
         ctx.fillRect(0, 0, gameWidth, gameHeight);
       }
+
+      // @ts-ignore
       function createFood() {
-        function randomFood(min, max) {
+        function randomFood(min: number, max: number) {
           const randNum =
             Math.round((Math.random() * (max - min) + min) / unitSize) *
             unitSize;
@@ -82,12 +87,16 @@ const WormPage: NextPage = ({}) => {
         foodX = randomFood(0, gameWidth - unitSize);
         foodY = randomFood(0, gameWidth - unitSize);
       }
+
+      // @ts-ignore
       function drawFood() {
         if (!ctx) return;
 
         ctx.fillStyle = foodColor;
         ctx.fillRect(foodX, foodY, unitSize, unitSize);
       }
+
+      // @ts-ignore
       function moveSnake() {
         if (!scoreTextRef.current) return;
 
@@ -103,6 +112,7 @@ const WormPage: NextPage = ({}) => {
           snake.pop();
         }
       }
+      // @ts-ignore
       function drawSnake() {
         if (!ctx) return;
         ctx.fillStyle = snakeColor;
@@ -112,6 +122,7 @@ const WormPage: NextPage = ({}) => {
           ctx.strokeRect(snakePart.x, snakePart.y, unitSize, unitSize);
         });
       }
+      // @ts-ignore
       function changeDirection(event) {
         const keyPressed = event.keyCode;
         const LEFT = 37;
@@ -143,6 +154,7 @@ const WormPage: NextPage = ({}) => {
             break;
         }
       }
+      // @ts-ignore
       function checkGameOver() {
         switch (true) {
           case snake[0].x < 0:
@@ -164,6 +176,7 @@ const WormPage: NextPage = ({}) => {
           }
         }
       }
+      // @ts-ignore
       function displayGameOver() {
         if (!ctx) return;
 
@@ -173,6 +186,7 @@ const WormPage: NextPage = ({}) => {
         ctx.fillText("GAME OVER!", gameWidth / 2, gameHeight / 2);
         running = false;
       }
+      // @ts-ignore
       function resetGame() {
         score = 0;
         xVelocity = unitSize;

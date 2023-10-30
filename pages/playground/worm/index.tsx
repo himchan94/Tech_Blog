@@ -8,6 +8,8 @@ const WormPage: NextPage = ({}) => {
   const scoreTextRef = useRef<HTMLDivElement>(null);
   const resetButtonRef = useRef<HTMLButtonElement>(null);
 
+  const gameInfoRef = useRef(null);
+
   useEffect(() => {
     if (
       gameBoardRef?.current &&

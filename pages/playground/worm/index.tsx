@@ -28,8 +28,8 @@ const WormPage: NextPage = ({}) => {
       let running = false;
       let xVelocity = unitSize;
       let yVelocity = 0;
-      let foodX;
-      let foodY;
+      let foodX: any;
+      let foodY: any;
       let score = 0;
       let snake = [
         { x: unitSize * 4, y: 0 },

@@ -36,6 +36,13 @@ const projects = [
     slug: "worm",
     alternativeText: "지렁이다",
   },
+  {
+    title: "generative-art1",
+    id: "worm-11/2",
+    tags: [{ name: "p5.js", color: "green" }],
+    slug: "art1",
+    alternativeText: "p5.js",
+  },
 ];
 
 const ProjectPage: NextPage = () => {

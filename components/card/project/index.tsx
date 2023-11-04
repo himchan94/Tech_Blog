@@ -31,12 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <article className={cx("project-card", { darkmode: isDarkMode })}>
       <div className={styles["project-card__img"]}>
         {cover ? (
-          <Image
-            src={cover}
-            layout='fill'
-            alt='project image'
-            objectFit='cover'
-          />
+          <Image src={cover} alt='project image' fill />
         ) : (
           <div className={styles["project-card__alternative-text"]}>
             {alternativeText}

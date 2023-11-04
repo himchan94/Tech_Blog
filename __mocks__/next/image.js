@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function image(props) {
-  console.log(props);
-
   let imgStyle = {
     position: "absolute",
     top: 0,

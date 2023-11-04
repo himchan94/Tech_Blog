@@ -48,12 +48,7 @@ const PostDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
       <div className={styles["page-wrapper"]}>
         <section className={styles["page-header-section"]}>
           <div className={styles["header-contianer"]}>
-            <Image
-              src={Wave}
-              layout='responsive'
-              objectFit='contain'
-              alt='header wave'
-            />
+            <Image src={Wave} className={styles["wave"]} alt='header wave' />
             <h3 className={styles["page-title"]}>Post</h3>
           </div>
         </section>
@@ -71,8 +66,7 @@ const PostDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
         <section className='nontion-container'>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight, rehypeRaw]}
-          >
+            rehypePlugins={[rehypeHighlight, rehypeRaw]}>
             {markdown}
           </ReactMarkdown>
         </section>

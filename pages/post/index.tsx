@@ -34,12 +34,7 @@ const PostPage: NextPage = ({
       {/* upper section */}
       <section className={styles["page-title-section"]}>
         <div className={styles["title-contianer"]}>
-          <Image
-            src={Wave}
-            layout='responsive'
-            objectFit='contain'
-            alt='header wave'
-          />
+          <Image src={Wave} className={styles["wave"]} alt='header wave' />
           <h3 className={styles["title"]}>Post</h3>
         </div>
       </section>

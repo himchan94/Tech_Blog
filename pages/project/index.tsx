@@ -40,12 +40,7 @@ const ProjectPage: NextPage = ({
       {/* upper section */}
       <section className={styles["page-title-section"]}>
         <div className={styles["title-contianer"]}>
-          <Image
-            src={Wave}
-            layout='responsive'
-            objectFit='contain'
-            alt='header wave'
-          />
+          <Image className={styles["wave"]} src={Wave} alt='header wave' />
           <h3 className={styles["title"]}>Project</h3>
         </div>
       </section>

@@ -62,22 +62,15 @@ const Home: NextPage = ({
       </Head>
       {/* information section */}
       <section className={styles.info}>
-        <Image
-          src='/images/bg/main-bg.jpeg'
-          alt='bg img'
-          layout='fill'
-          objectFit='cover'
-        />
+        <Image src='/images/bg/main-bg.jpeg' alt='bg img' fill />
         <div className={styles["info__inner-wrapper"]}>
           <div className={styles["info__profile-container"]}>
             <Link href='/about'>
               <div className={styles["info__profile-img"]}>
                 <Image
-                  src='/images/profile/profile-img.jpeg'
+                  src='/images/profile/2023-me.png'
                   alt='profile img'
-                  layout='fill'
-                  objectFit='cover'
-                  objectPosition='center'
+                  fill
                 />
               </div>
               <div className={styles["info__arrow"]}>

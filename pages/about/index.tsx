@@ -31,17 +31,11 @@ const About: NextPage = ({}) => {
         <Image
           src='/images/bg/about-bg.jpeg'
           alt='bg img'
-          layout='fill'
-          objectFit='cover'
+          fill
+          style={{ objectFit: "cover" }}
         />
         <div className={styles["head-section__profile-image"]}>
-          <Image
-            src='/images/profile/profile-img.jpeg'
-            alt='profile img'
-            layout='fill'
-            objectFit='cover'
-            objectPosition='center'
-          />
+          <Image src='/images/profile/2023-me.png' alt='profile img' fill />
         </div>
       </section>
 
@@ -56,8 +50,8 @@ const About: NextPage = ({}) => {
             rel='noreferrer'>
             <Image
               src='/images/icon/github-fill.svg'
-              width={20}
-              height={20}
+              width={40}
+              height={40}
               alt='github icon'
             />
           </a>
@@ -78,12 +72,7 @@ const About: NextPage = ({}) => {
       {/* detail section */}
       <section className={styles["detail-section"]}>
         <article className={styles["detail-section__article"]}>
-          <Image
-            src={Wave}
-            layout='responsive'
-            objectFit='contain'
-            alt='header wave'
-          />
+          <Image className={styles["wave"]} src={Wave} alt='header wave' />
           <h3 className={styles["article__title"]}>Hello World!</h3>
           <div className={styles["article__desc"]}>
             사람들의 삶을 행복하게 하는 프로덕트를 만들고 싶은 프론트엔드 개발자
@@ -92,24 +81,14 @@ const About: NextPage = ({}) => {
           </div>
         </article>
         <article className={styles["detail-section__article"]}>
-          <Image
-            src={Wave}
-            layout='responsive'
-            objectFit='contain'
-            alt='header wave'
-          />
+          <Image className={styles["wave"]} src={Wave} alt='header wave' />
           <h3 className={styles["article__title"]}>Motto</h3>
           <div className={styles["article__desc"]}>
             &quot;잔잔한 파도는 결코 유능한 뱃사람을 만들 수 없다.&quot;
           </div>
         </article>
         <article className={styles["detail-section__article"]}>
-          <Image
-            src={Wave}
-            layout='responsive'
-            objectFit='contain'
-            alt='header wave'
-          />
+          <Image className={styles["wave"]} src={Wave} alt='header wave' />
           <h3 className={styles["article__title"]}>Skills</h3>
           <div className={styles["tag-wrapper"]}>
             <Tag name='HTML' color='blue' />
@@ -126,12 +105,7 @@ const About: NextPage = ({}) => {
           </div>
         </article>
         <article className={styles["detail-section__article"]}>
-          <Image
-            src={Wave}
-            layout='responsive'
-            objectFit='contain'
-            alt='header wave'
-          />
+          <Image className={styles["wave"]} src={Wave} alt='header wave' />
           <h3 className={styles["article__title"]}>Interested In</h3>
           <div className={styles["tag-wrapper"]}>
             <Tag name='SEO' color='tan' />

@@ -53,7 +53,7 @@ const Header: React.FC = ({}) => {
           <Image
             src={HeaderWave}
             layout='responsive'
-            objectFit='contain'
+            style={{ objectFit: "contain" }}
             alt='header wave'
           />
         </div>

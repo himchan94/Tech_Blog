@@ -47,12 +47,7 @@ const ProjectDetail: InferGetStaticPropsType<typeof getStaticProps> = ({
       <div className={styles["page-wrapper"]}>
         <section className={styles["page-header-section"]}>
           <div className={styles["header-contianer"]}>
-            <Image
-              src={Wave}
-              layout='responsive'
-              objectFit='contain'
-              alt='header wave'
-            />
+            <Image className={styles["wave"]} src={Wave} alt='header wave' />
             <h3 className={styles["page-title"]}>Project</h3>
           </div>
         </section>

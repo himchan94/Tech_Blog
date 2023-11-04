@@ -10,7 +10,10 @@
   align-items: center;
   background-color: color.$MAIN1;
   height: 56px;
-  font-family: Oswald, Monument Extended, Spoqa Han Sans Neo;
+  font-family:
+    Oswald,
+    Monument Extended,
+    Spoqa Han Sans Neo;
   color: color.$WHITE;
   transition: 0.5s;
   @include typo.BODY1;
@@ -98,8 +101,12 @@
     left: 0;
     bottom: 114px;
     width: 100%;
-    height: 35px;
     display: block;
+
+    .wave {
+      width: 100%;
+      height: 60px;
+    }
   }
 
   .header__toggle {

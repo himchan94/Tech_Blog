@@ -14,39 +14,11 @@ import NotionService from "../../services/notion-service";
 import styles from "./playground.module.scss";
 import Wave from "../../public/images/wave/category-wave.svg";
 import ProjectCard from "../../components/card/project";
-
-const projects = [
-  {
-    title: "planets",
-    id: "planets-10/23",
-    tags: [
-      { name: "우주", color: "green" },
-      { name: "cloned", color: "purple" },
-    ],
-    slug: "planets",
-    alternativeText: "우주다",
-  },
-  {
-    title: "worm",
-    id: "worm-10/29",
-    tags: [
-      { name: "worm", color: "green" },
-      { name: "cloned", color: "purple" },
-    ],
-    slug: "worm",
-    alternativeText: "지렁이다",
-  },
-  {
-    title: "generative-art1",
-    id: "worm-11/2",
-    tags: [{ name: "p5.js", color: "green" }],
-    slug: "art1",
-    alternativeText: "p5.js",
-  },
-];
+import { getProjects } from "../../modules/getProject";
 
 const ProjectPage: NextPage = () => {
   const { mode } = useContext(ModeContext);
+  const projects = getProjects();
 
   return (
     <>
@@ -57,7 +29,7 @@ const ProjectPage: NextPage = () => {
         <meta
           name={"og:description"}
           title={"og:description"}
-          content={"개발자 김힘찬의 실습 파ㄹ"}
+          content={"개발자 김힘찬의 실습 파일"}
         />
         <meta
           name={"og:image"}
@@ -70,8 +42,7 @@ const ProjectPage: NextPage = () => {
         <div className={styles["title-contianer"]}>
           <Image
             src={Wave}
-            layout='responsive'
-            objectFit='contain'
+            style={{ objectFit: "contain" }}
             alt='header wave'
           />
           <h3 className={styles["title"]}>Playground</h3>

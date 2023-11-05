@@ -10,8 +10,10 @@ const Page: NextPage = ({}) => {
     /* cloned from https://codepen.io/RiniSW/pen/wvNGVwN */
     /* thanks for sharing your idea */
     <>
-      <div>
-        <h1> &nbsp;&nbsp; Happy &nbsp; Halloween </h1>
+      <div className={styles["wrapper"]}>
+        <h1 className={styles["title"]}>
+          &nbsp;&nbsp; Happy &nbsp; Halloween{" "}
+        </h1>
         <div id={styles["container"]}>
           <div className={styles["ghost"]}>
             <div className={styles["body"]}>

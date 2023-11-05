@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+
+$white: #fff;
+$grey: #dbdbdb;
+$darkgray: #c3c7cb;
+$dimples: #ffbeff;
+$eyes: #01000a;
+$bg: #010341;
+$shadow: #110f2b;
+
+@mixin pseudo($content: "") {
+  position: absolute;
+  content: $content;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: calc(100vh - 256px);
+  background: $bg;
+
+  * {
+    box-sizing: border-box;
+    ::before,
+    ::after {
+      box-sizing: border-box;
+    }
+  }
+}
+
+.title {
+  position: absolute;
+  top: 100px;
+  font-family: "Creepster", cursive;
+  font-size: 100px;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  background-image: linear-gradient(#ff7600, #ea6c00);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: -850px 0;
+  transition:
+    background-position 1s,
+    text-shadow 1s;
+  transition-delay: 0.6s, 0s;
+
+  &:hover {
+    transition:
+      background-position 1s,
+      text-shadow 1s;
+    transition-delay: 0s, 1s;
+    background-position: 0 0;
+    text-shadow:
+      0 0 10px #ffa900,
+      0 0 20px #efb75f,
+      0 0 40px #efb75f,
+      0 0 80px #efb75f,
+      0 0 160px #efb75f;
+  }
+}
+
+#container {
+  width: 10rem;
+  height: 18rem;
+}
+
+.ghost {
+  position: relative;
+  .body {
+    width: 10rem;
+    height: 18rem;
+    background: $white;
+    border-radius: 5rem 5rem 1rem 1rem;
+    box-shadow:
+      0px 0px 0px $grey inset,
+      0 0 50px #5939db;
+    animation: ghostFloat 2s ease-in-out infinite;
+
+    .face {
+      position: absolute;
+      top: 4.2rem;
+      left: 2.8rem;
+
+      .eyes {
+        width: 1.9rem;
+        height: 2.6rem;
+        background: $eyes;
+        border-radius: 50%;
+        animation: eyesBlink 3s linear infinites;
+        -webkit-animation: eyesBlink 3s linear infinite; /* Chrome, Safari, Opera */
+
+        &::before {
+          @include pseudo;
+          width: 85%;
+          height: inherit;
+          left: 4.3rem;
+          background: inherit;
+          border-radius: inherit;
+        }
+      }
+
+      .dimples {
+        width: 1rem;
+        height: 1rem;
+        background: $dimples;
+        border-radius: 50%;
+        margin-top: 0.3rem;
+
+        &::after,
+        &::before {
+          @include pseudo;
+          width: 15px;
+          height: inherit;
+          left: 5.3rem;
+          background: inherit;
+          border-radius: inherit;
+        }
+      }
+      .mouth {
+        position: absolute;
+        top: 3.5rem;
+        left: 0.2rem;
+        background: $white;
+        width: 6rem;
+        height: 2rem;
+        border-radius: 50%;
+
+        &::after {
+          @include pseudo;
+          z-index: -1;
+          width: 83%;
+          left: 0.3rem;
+          height: inherit;
+          border-radius: 50%;
+          box-shadow: 0px 5px 0px 0px $eyes;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    top: 17rem;
+    .circle {
+      position: absolute;
+      z-index: 2;
+      width: 2.23rem;
+      height: 2.2rem;
+      background: $white;
+      border-radius: 0 0 1rem 1rem;
+      &:nth-child(1) {
+        left: 0;
+      }
+      &:nth-child(2) {
+        left: 3.9rem;
+        border-radius: 1rem;
+      }
+      &:nth-child(3) {
+        left: 7.8rem;
+      }
+    }
+
+    .wave {
+      position: relative;
+      z-index: 1;
+      left: 2rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      background: $darkgray;
+      border-radius: 1rem;
+      box-shadow: inset 0rem 1.1rem 0 $white;
+      &::before {
+        @include pseudo;
+        left: 3.9rem;
+        width: inherit;
+        height: inherit;
+        background: inherit;
+        border-radius: inherit;
+        box-shadow: inherit;
+      }
+    }
+  }
+}
+
+.shadow {
+  position: absolute;
+  width: 10rem;
+  height: 1rem;
+  top: 20rem;
+  border-radius: 50%;
+  background: $shadow;
+  filter: blur(0.1rem);
+  animation: shadowAnimation 2s linear infinite;
+}
+
+@keyframes ghostFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+}
+@keyframes eyesBlink {
+  0%,
+  30%,
+  38%,
+  100% {
+    transform: scale(1.05);
+  }
+  34%,
+  36% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shadowAnimation {
+  0%,
+  100% {
+    opacity: 100%;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 70%;
+    transform: scale(0.9, 0.9);
+  }
+}

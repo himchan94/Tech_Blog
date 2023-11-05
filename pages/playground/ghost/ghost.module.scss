@@ -89,7 +89,7 @@ $shadow: #110f2b;
         height: 2.6rem;
         background: $eyes;
         border-radius: 50%;
-        animation: eyesBlink 3s linear infinites;
+        animation: eyesBlink 3s linear infinite;
         -webkit-animation: eyesBlink 3s linear infinite; /* Chrome, Safari, Opera */
 
         &::before {

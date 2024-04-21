@@ -141,8 +141,8 @@ export default class NotionService {
   }
 
   private static documentFormatter(page: any): Document {
-    let cover = page.cover;
-    switch (cover.type) {
+    let cover = page?.cover;
+    switch (cover?.type) {
       case "file":
         cover = page.cover.file.url;
         break;
